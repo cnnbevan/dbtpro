@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: my_first_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+        meta:
+          dimension:
+            type: number
+
+      # START: Add this block for your new column
+      - name: sometext
+        description: "This is the new text column"
+        meta:
+          dimension:
+            type: string
+      # END: Addition is complete
+
+  - name: my_second_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+        meta:
+          dimension:
+            type: number
